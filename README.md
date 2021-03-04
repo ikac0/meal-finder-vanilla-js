@@ -1,2 +1,2 @@
 # meal-finder-vanilla-js
-Created with CodeSandbox
+Created using vanilla-js
