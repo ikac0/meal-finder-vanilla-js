@@ -4,7 +4,7 @@
   "description": "Created using vanilla-js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/ikac0/meal-finder-vanilla-js/issues"
   },
-  "homepage": "https://github.com/ikac0/meal-finder-vanilla-js#readme",
+  "homepage": "https://ikac0.github.io/meal-finder-vanilla-js",
   "dependencies": {
     "gh-pages": "^3.1.0"
   }
