@@ -4,6 +4,7 @@ const random = document.getElementById("random");
 const mealsEl = document.getElementById("meals");
 const resultHeading = document.getElementById("result-heading");
 const singleMeal = document.getElementById("single-meal");
+const showMealResult = document.getElementById("how-meal-result");
 
 // Search meal and fetch from API
 function searchMeal(e) {
@@ -20,11 +21,10 @@ function searchMeal(e) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         resultHeading.innerHTML = `<h2>Search results for "${term}":</h2>`;
-
         if (data.meals === null) {
-          resultHeading.innerHTML = `<p>There are no search results. Try again.</p>`;
+          (resultHeading.innerHTML = `<p>There are no search results. Try again.</p>`),
+            (showMealResult.innerHTML = ``);
         } else {
           mealsEl.innerHTML = data.meals
             .map(
@@ -33,7 +33,6 @@ function searchMeal(e) {
             <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
             <div class="meal-info" data-mealID="${meal.idMeal}">
             <h3>${meal.strMeal}</h3></div>
-            
             </div>
             `
             )
@@ -41,7 +40,7 @@ function searchMeal(e) {
         }
       });
     // Clear search text
-    // search.value = "";
+    search.value = "";
   } else {
     alert("Give me a letter or some word");
   }
